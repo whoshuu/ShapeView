@@ -44,7 +44,7 @@ Then, put a ShapeView in the XML:
         shapeview:stroke_width="5dp" />
 ```
 
-To access it in Java, first grab the `View` object:
+To access it in Java, first grab the `ShapeView` object:
 
 ```java
 ShapeView svRectangle = (ShapeView) findViewById(R.id.svRectangle);
