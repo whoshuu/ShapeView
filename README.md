@@ -56,6 +56,8 @@ and change a property:
 svRectangle.setStyle(Style.FILL);
 ```
 
+Modifying any of the properties will invalidate the shape and force Android to redraw it with the new property.
+
 ## Contributing
 
 Please fork this repository and contribute back using [pull requests](https://github.com/whoshuu/ShapeView/pulls). Features can be requested using [issues](https://github.com/whoshuu/ShapeView/issues). All code, comments, and critiques are greatly appreciated.
