@@ -25,9 +25,9 @@ In the XML you plan on using ShapeView in, place the namespace attribute in one 
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:shapeview="http://schemas.android.com/apk/res-auto" <!-- You need this! -->
     android:layout_width="match_parent"
-    android:layout_width="match_parent" >
+    android:layout_width="match_parent"
+    xmlns:shapeview="http://schemas.android.com/apk/res-auto" > <!-- You need this>
     ...
 ```
 
