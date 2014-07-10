@@ -109,7 +109,7 @@ public class ShapeView extends View {
             
         }
         if (type.equals(ShapeType.RECTANGLE)) {
-            canvas.drawRect(bounds, testPaint);
+            canvas.drawRect(bounds, paint);
         } else if (type.equals(ShapeType.SQUARE)) {
             if ((bounds.right - bounds.left) > (bounds.bottom - bounds.top)) {
                 canvas.drawRect((bounds.right - bounds.left + 3 * bounds.top - bounds.bottom) / 2,
