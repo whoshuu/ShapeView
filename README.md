@@ -35,12 +35,25 @@ Then, put a ShapeView in the XML:
 
 ```xml
     <com.whoshuu.shapeview.ShapeView
+        android:id="@+id/svRectangle"
         android:layout_width="20dp"
         android:layout_height="40dp"
         shapeview:shape="rectangle"
         shapeview:color="#0F0"
         shapeview:style="stroke"
         shapeview:stroke_width="5dp" />
+```
+
+To access it in Java, first grab the `View` object:
+
+```java
+ShapeView svRectangle = (ShapeView) findViewById(R.id.svRectangle);
+```
+
+and change a property:
+
+```java
+svRectangle.setStyle(Style.FILL);
 ```
 
 ## Contributing
