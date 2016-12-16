@@ -16,6 +16,7 @@ public class ShapeView extends View {
     private ShapeType type;
     private ShapeDirection direction;
     private int color;
+    private int strokeColor;
     private int width;
     private int height;
     private Style style;
@@ -23,6 +24,7 @@ public class ShapeView extends View {
     private Paint paint;
     private RectF bounds;
     private Path triangle;
+    private Paint testPaint;
 
     public ShapeView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -109,7 +111,9 @@ public class ShapeView extends View {
             
         }
         if (type.equals(ShapeType.RECTANGLE)) {
-            canvas.drawRect(bounds, paint);
+            if (style == Style.FILL_AND_STROKE) {
+                canvas.drawRect(bounds, paint);
+            }
         } else if (type.equals(ShapeType.SQUARE)) {
             if ((bounds.right - bounds.left) > (bounds.bottom - bounds.top)) {
                 canvas.drawRect((bounds.right - bounds.left + 3 * bounds.top - bounds.bottom) / 2,
@@ -169,6 +173,11 @@ public class ShapeView extends View {
             triangle.lineTo(x2, y2);
             canvas.drawPath(triangle, paint);
         }
+        /*canvas.drawRect(bounds.left,
+                (bounds.bottom - bounds.top + 3 * bounds.left - bounds.right) / 2,
+                bounds.right,
+                (bounds.bottom - bounds.top + bounds.left + bounds.right) / 2,
+                testPaint);*/
     }
     
     @Override
@@ -202,6 +211,11 @@ public class ShapeView extends View {
         paint.setStyle(style);
         paint.setColor(color);
         paint.setStrokeWidth(strokeWidth);
+        
+        testPaint = new Paint();
+        testPaint.setStyle(Style.STROKE);
+        testPaint.setColor(Color.BLACK);
+        testPaint.setStrokeWidth(1f);
     }
     
 }
